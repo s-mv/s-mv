@@ -1,7 +1,7 @@
 # Hi there
 smv here
 ## 🔭 I’m currently working on:  
-I'm working on making stuff to present on GitHub -as I love to show off- and am trying to find fun and challenging ideas.
+I'm working on making stuff to present on GitHub ~~as I love to show off~~ and am trying to find fun and challenging ideas.
 ## 🌱 I’m currently learning:  
 I am learning C++ right now, it's easier to pick up since I've been coding for a while now.
 ## 👯 I’m looking to collaborate on:
