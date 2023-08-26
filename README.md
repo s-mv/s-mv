@@ -11,7 +11,7 @@ Currently busy but when not, I'd love to work on projects related to game develo
 ## 💬 Ask me about:  
 JavaScript, I know a bit of JavaScript.
 ## 📫 How to reach me:  
-- **Discord**: smv#1955
+- **Discord**: @the.smv (formerly smv#1955)
 ## ⚡ Fun fact:  
 A small percentage of the static you see on "dead" TV stations is left over radiation from the Big Bang. You're seeing residual effects of the universe's creation.
 
