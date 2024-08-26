@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shreerang Vaidya - Resume</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .a4 {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            padding: 8mm;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 10pt;
+            line-height: 1.3;
+            box-sizing: border-box;
+        }
+
+        @media print {
+            .a4 {
+                margin: 0;
+                border: initial;
+                border-radius: initial;
+                width: initial;
+                min-height: initial;
+                box-shadow: initial;
+                background: initial;
+                page-break-after: always;
+            }
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 18pt;
+            margin-bottom: 2pt;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-bottom: 2pt;
+        }
+
+        .contact-row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1pt;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin: 0 6pt;
+        }
+
+        .icon {
+            width: 16pt;
+            height: 16pt;
+            margin-right: 5pt;
+        }
+
+        .contact-info a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        h2 {
+            border-bottom: 1pt solid #000;
+            font-size: 14pt;
+            margin-top: 8pt;
+            margin-bottom: 1pt;
+        }
+
+        ul {
+            padding-left: 12pt;
+            margin-top: 1pt;
+        }
+
+        li {
+            margin-left: 4px;
+        }
+
+        .experience-item {
+            margin-bottom: 10px;
+        }
+
+        .job-title {
+            font-style: italic;
+        }
+
+        .date-range {
+            float: right;
+        }
+
+        .project-title {
+            font-weight: bold;
+        }
+
+        p {
+            margin: 6pt 0;
+        }
+
+        a,
+        a:visited {
+            text-decoration: inherit;
+            color: black;
+            border-bottom: 1px solid black;
+        }
+
+        .icon {
+            height: 18px;
+            align-self: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="a4">
+        <header>
+            <h1>Shreerang Vaidya</h1>
+            <div class="contact-info">
+                <div class="contact-row">
+                    <span class="contact-item">
+                        <img class="icon" src="github.svg" alt="GitHub" />
+                        <a href="https://github.com/s-mv/">https://github.com/s-mv/</a>
+                    </span>
+                    <span class="contact-item">
+                        <img class="icon" src="linkedin.svg" alt="LinkedIn" />
+                        <a
+                            href="https://linkedin.com/in/shreerang-vaidya/">https://linkedin.com/in/shreerang-vaidya/</a>
+                    </span>
+                </div>
+                <div class="contact-row">
+                    <span class="contact-item">
+                        <img class="icon" src="email.svg" alt="Email" />
+                        <a href="mailto:shreerangvaidya28@gmail.com">shreerangvaidya28@gmail.com</a>
+                    </span>
+                    <span class="contact-item">
+                        <img class="icon" src="email.svg" alt="Email" />
+                        <a href="mailto:2022.shreerang.vaidya@ves.ac.in">2022.shreerang.vaidya@ves.ac.in</a>
+                    </span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <p>Currently an undergraduate pursuing computer science. Specially interested in compiler design,
+                machine learning, embedded systems and data science.<br />
+                <a href="https://s-mv.github.io/">https://s-mv.github.io/</a>
+            </p>
+
+            <h2>Education</h2>
+            <p><strong>Vivekanand Education Society's Institute of Technology</strong> <span class="date-range">2022 –
+                    2026</span><br>
+                <em>B. E. in Computer Engineering</em> — <em>Aggregate GPA:</em> 8.9 — <em>Relevant courses:</em> DSA,
+                OOPM, DBMS, Operating
+                Systems.
+            </p>
+
+            <h2>Technical Skills</h2>
+            <ul>
+                <li>Basic machine learning (deep learning) and data science.</li>
+                <li>Basic full-stack development (MERN stack).</li>
+                <li>Knowledge of OOP, design patterns, DSA, etc.</li>
+                <li>Proficiency in C/C++, Python, and JS.</li>
+            </ul>
+
+            <h2>Experience</h2>
+            <div class="experience-item">
+                <strong>Banao Technologies</strong> <span class="date-range">Jan 2024– Jun 2024</span><br>
+                <span class="job-title"><em>Web Scraping</em> Intern</span>
+                <ul>
+                    <li>Learned the applications of web scraping, DBMS, backend development, etc. through various
+                        projects.
+                    </li>
+                    <li>Gained valuable insights about the internal workings of a startup and team collaboration.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <strong>Academor</strong> <span class="date-range">July 2023– August 2023</span><br>
+                <span class="job-title"><em>Machine Learning</em> Intern</span>
+                <ul>
+                    <li>Making classification model to for loan approval prediction.</li>
+                    <li>Collaboration with team over Google Colab.</li>
+                </ul>
+            </div>
+
+            <h2>Notable Projects</h2>
+            <p class="project-title">smvm | <a href="https://github.com/s-mv/smvm"> <img src="github.svg" /> —
+                    https://github.com/s-mv/smvm</a></p>
+            <ul>
+                <li>The smvm (smv virtual machine) is a register based Virtual Machine implementation in C.</li>
+                <li>Release version, actively being developed.</li>
+                <li>Applies DSA, microprocessors, compiler design.</li>
+            </ul>
+
+            <p class="project-title">AirBNB Review Analyzer | <a href="https://github.com/s-mv/airbnb-review-analyzer">
+                    <img src="github.svg" /> — https://github.com/s-mv/airbnb-review-analyzer</a></p>
+            <ul>
+                <li>Analyze airbnb reviews in seconds!</li>
+                <li>Made using Selenium, Beautiful Soup 4 and NLTK.</li>
+            </ul>
+
+            <p class="project-title">KisanSevak | <a href="https://github.com/Fresh-Fields/fresh-fields"> <img
+                        src="github.svg" /> — https://github.com/Fresh-Fields/fresh-fields</a>
+            </p>
+            <ul>
+                <li>ML powered agricultural tool for the farmer of the future! Recommends crops, predicts farm yield and
+                    compares future market prices.</li>
+                <li>Technical skills used: deep learning, ML, full-stack web development.</li>
+            </ul>
+
+            <h2>Achievements</h2>
+            <ul>
+                <li>Published paper "<strong>KisanSevak: Enhancing Crop Management and Market Forecasting through
+                        Machine
+                        Learning</strong>" in Volume 72 of the Journal of Engineering and Technology Management (JET-M):
+                    <a href="https://jet-m.com/wp-content/uploads/129-JETM8261.pdf">
+                        https://jet-m.com/wp-content/uploads/129-JETM8261.pdf
+                    </a>
+                </li>
+                <li>Special mention in Hack-AI-thon 2.0.</li>
+                <li>2nd runner up in BuzzPro '24.</li>
+                <li>3rd runner up in Awakening The Scientist, 2022.</li>
+                <li>Submitted a solution in GDSC Solution Challenge, 2024.</li>
+                <li>2 time Google Code-In Participant (2017-18).</li>
+            </ul>
+        </main>
+    </div>
+</body>
+
+</html>
