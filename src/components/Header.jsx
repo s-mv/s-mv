@@ -1,4 +1,4 @@
-export default function Header({ scrollToSection }) {
+export default function Header() {
   return (
     <header className="sticky top-0 bg-black/80 backdrop-blur-sm z-10 border-b border-gray-800">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between max-w-4xl">
@@ -6,36 +6,36 @@ export default function Header({ scrollToSection }) {
         <nav>
           <ul className="flex space-x-6">
             <li>
-              <button 
-                onClick={() => scrollToSection('projects')} 
+              <a 
+                href="#projects" 
                 className="hover:text-orange-800 transition-colors"
               >
                 Projects
-              </button>
+              </a>
             </li>
             <li>
-              <button 
-                onClick={() => scrollToSection('skills')} 
+              <a 
+                href="#skills" 
                 className="hover:text-orange-800 transition-colors"
               >
                 Skills
-              </button>
+              </a>
             </li>
             <li>
-              <button 
-                onClick={() => scrollToSection('experience')} 
+              <a 
+                href="#experience" 
                 className="hover:text-orange-800 transition-colors"
               >
                 Experience
-              </button>
+              </a>
             </li>
             <li>
-              <button 
-                onClick={() => scrollToSection('about')} 
+              <a 
+                href="#about" 
                 className="hover:text-orange-800 transition-colors"
               >
                 About
-              </button>
+              </a>
             </li>
           </ul>
         </nav>
