@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'preact/hooks';
-import { resumeProjects } from './resumeProjects.js';
+import { resumeProjects } from './resumeProjects';
 
 export default function Resume() {
   const [resumeType, setResumeType] = useState('systems');
