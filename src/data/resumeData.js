@@ -1,4 +1,75 @@
-// Common resume data
+import { projects, experiences, teststack, achievements } from '../projects';
+
+const convertProjects = () => {
+  const allProjects = [];
+
+  Object.keys(projects).forEach(category => {
+    Object.keys(projects[category]).forEach(projectName => {
+      const project = projects[category][projectName];
+
+      const tags = [];
+
+      if (category === "systems") tags.push("systems");
+      if (category === "SDE/ML") {
+        const mlKeywords = ["Machine Learning", "Data Science", "Natural Language Processing", "Data Analysis"];
+        const isML = project.skills.some(skill => mlKeywords.includes(skill));
+
+        tags.push("sde");
+        if (isML) tags.push("ml");
+      }
+
+      if (project.skills.some(skill =>
+        ["Compiler Design", "Interpreters", "Virtual Machines"].includes(skill))) {
+        tags.push("compilers");
+      }
+
+      let description = [project.desc];
+      if (project.skills.length > 0) {
+        description.push(`Technologies: ${project.skills.slice(0, 4).join(", ")}${project.skills.length > 4 ? ", etc." : ""}`);
+      }
+
+      allProjects.push({
+        title: project.name,
+        url: project.link,
+        liveUrl: project.liveLink || null,
+        description,
+        tags,
+        skills: project.skills,
+        wip: project.wip,
+        hobby: project.hobby
+      });
+    });
+  });
+
+  return allProjects;
+};
+
+const convertExperiences = () => {
+  return experiences.map(exp => ({
+    company: exp.company,
+    period: exp.date,
+    title: exp.position,
+    responsibilities: exp.description,
+    skills: exp.skills
+  }));
+};
+
+const generateAchievements = () => {
+  return achievements.map(achievement =>
+    `${achievement.title} (${achievement.year}).`
+  );
+};
+
+const generateSkills = () => {
+  return {
+    languages: teststack.languages.join(", "),
+    technologies: teststack.technologies.join(", "),
+    tools: teststack.tools.join(", "),
+    concepts: teststack.concepts.join(", ")
+  };
+};
+
+// Generate common data for all resumes
 export const commonData = {
   name: "Shreerang Vaidya",
   contact: {
@@ -20,115 +91,43 @@ export const commonData = {
       "3rd runner up in Awakening The Scientist, 2022."
     ]
   },
-  experiences: [
-    {
-      company: "Accelus Technologies",
-      period: "Feb 2025– Present",
-      title: "Intern",
-      responsibilities: [
-        "Developing CNC machine G-code bytecode VM in C, extending rs274ngc specification for efficient control.",
-        "Extensively applying compiler design, OS, embedded and systems programming concepts."
-      ]
-    },
-    {
-      company: "Banao Technologies",
-      period: "Jan 2024– Jun 2024",
-      title: "Web Scraping Intern",
-      responsibilities: [
-        "Learned the applications of web scraping, DBMS, backend development, etc. through various projects.",
-        "Gained valuable insights about the internal workings of a startup and team collaboration."
-      ]
-    },
-    {
-      company: "Academor",
-      period: "July 2023– August 2023",
-      title: "Machine Learning Intern",
-      responsibilities: [
-        "Made a classification model for loan approval prediction. Collaboration with team over Google Colab."
-      ]
-    }
-  ],
-  projects: [
-    {
-      title: "smvm",
-      url: "https://github.com/s-mv/smvm",
-      description: [
-        "Register-based Virtual Machine in C with assembler. Release v0.1.1 available, CI/CD with GitHub Actions.",
-        "Utilizes DSA, microprocessors, compiler design principles. Helped me learn Github Actions CI/CD."
-      ],
-      tags: ["systems", "compilers", "sde"]
-    },
-    {
-      title: "smvblock",
-      url: "https://github.com/s-mv/smvblock",
-      description: [
-        "Lightweight blockchain built in Rust from scratch for educational purposes based on the Ethereum white paper.",
-        "Zero-gas, zero-fee system focused on clean implementation of blockchain fundamentals."
-      ],
-      tags: ["systems", "sde"]
-    },
-    {
-      title: "Black-Scholes Visualizer",
-      url: "https://github.com/s-mv/black-scholes-visualizer",
-      liveUrl: "https://s-mv.github.io/black-scholes-visualizer/",
-      description: [
-        "Educational tool to demonstrate the Black-Scholes pricing model for European options using Rust + WebAssembly.",
-        "Implements the full mathematical model including Phi(x), and d1, d2 terms with interactive visualization."
-      ],
-      tags: ["ml", "sde"]
-    },
-    {
-      title: "gcode++",
-      url: "https://github.com/s-mv/gcode-plus-plus",
-      description: [
-        "Bytecode VM implementation extending the NIST rs274ngc g-code interpreter, adding conditions, looping, variables for versatility.",
-        "Extensively applying compiler design, systems programming, as well as data structures and algorithms."
-      ],
-      tags: ["systems", "compilers", "sde"]
-    },
-    {
-      title: "KisanSevak",
-      url: "https://jet-m.com/wp-content/uploads/129-JETM8261.pdf",
-      description: [
-        "ML-based crop management and market forecasting system for farmers.",
-        "Published paper in the Journal of Engineering and Technology Management (JET-M)."
-      ],
-      tags: ["ml"]
-    }
-  ],
-  achievements: [
-    "AIR 1627 in GATE CSE 2025 certifying strong fundamentals.",
-    "Co-hosted the 1st Godot India Community Game Jam (GICGJ), 2025.",
-    "Co-authored and published paper \"KisanSevak: Enhancing Crop Management and Market Forecasting through Machine Learning\" in Volume 72 of the Journal of Engineering and Technology Management (JET-M).",
-    "Submitted a solution in Amazon ML Challenge, 2024.",
-    "Submitted a solution in GDSC Solution Challenge, 2024.",
-    "2 time Google Code-In Participant (2017-18)."
-  ],
-  skills: {
-    languages: "C, C++, Rust, Python, Go, Java, JavaScript",
-    technologies: "MERN Stack, PyTorch, TensorFlow, FastAPI, LLVM, WebAssembly",
-    tools: "Unix/Linux, Git, GDB, Valgrind, Make/CMake, Docker, Selenium",
-    concepts: "Systems Programming, Compiler Design, DSA, OS, Embedded Systems, ML/DL, Web Development, CI/CD"
-  }
+  experiences: convertExperiences(),
+  projects: convertProjects(),
+  achievements: generateAchievements(),
+  skills: generateSkills()
 };
 
+// Systems Resume Configuration
 export const systemsResumeConfig = {
   title: "Systems Engineering Resume",
-  excludeExperiences: ["Academor"],
   projectTags: ["systems", "compilers"],
-  highlightedSkills: ["Systems Programming", "Compiler Design", "OS", "Embedded Systems"]
+  includeExperiences: ["Accelus Technologies", "Banao Technologies", "4thventure IoTSpace"],
+  projectSelection: commonData.projects
+    .filter(p => p.tags.includes("systems") || p.tags.includes("compilers"))
+    .filter(p => !p.hobby && !p.wip)
+    .slice(0, 4),
+  highlightedSkills: ["C", "C++", "Rust", "Assembly", "Systems Programming", "Compiler Design", "Virtual Machines"]
 };
 
+// SDE Resume Configuration
 export const sdeResumeConfig = {
   title: "Software Development Engineer Resume",
-  excludeExperiences: ["Academor"],
   projectTags: ["sde"],
-  highlightedSkills: ["DSA", "Web Development", "CI/CD"]
+  includeExperiences: ["Accelus Technologies", "Banao Technologies", "4thventure IoTSpace"],
+  projectSelection: commonData.projects
+    .filter(p => p.tags.includes("sde"))
+    .filter(p => !p.hobby)
+    .slice(0, 4),
+  highlightedSkills: ["Rust", "JavaScript", "TypeScript", "React", "Web Development", "DSA", "CI/CD"]
 };
 
+// ML Resume Configuration
 export const mlResumeConfig = {
   title: "Machine Learning Engineer Resume",
-  includeExperiences: ["Accelus Technologies", "Academor"],
   projectTags: ["ml"],
-  highlightedSkills: ["ML/DL", "PyTorch", "TensorFlow"]
+  includeExperiences: ["Banao Technologies", "Accelus Technologies", "4thventure IoTSpace"],
+  projectSelection: commonData.projects
+    .filter(p => p.tags.includes("ml"))
+    .slice(0, 4),
+  highlightedSkills: ["Python", "Machine Learning", "Data Science", "Data Analysis", "Natural Language Processing"]
 };

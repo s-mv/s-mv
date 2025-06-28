@@ -6,13 +6,11 @@ export default function Resume() {
   const [config, setConfig] = useState(systemsResumeConfig);
 
   useEffect(() => {
-    // Parse URL query parameter for resume type
     const params = new URLSearchParams(window.location.search);
     const type = params.get('type') || 'systems';
     setResumeType(type);
-    
-    // Set config based on resume type
-    switch(type) {
+
+    switch (type) {
       case 'sde':
         setConfig(sdeResumeConfig);
         break;
@@ -29,28 +27,26 @@ export default function Resume() {
   };
 
   const filteredExperiences = commonData.experiences.filter(exp => {
-    if (config.includeExperiences) {
-      return config.includeExperiences.includes(exp.company);
-    }
-    return !config.excludeExperiences || !config.excludeExperiences.includes(exp.company);
+    return config.includeExperiences && config.includeExperiences.includes(exp.company);
   });
 
-  const filteredProjects = commonData.projects.filter(project => {
-    return project.tags.some(tag => config.projectTags.includes(tag));
-  });
+  const filteredProjects = config.projectSelection || 
+    commonData.projects.filter(project => {
+      return project.tags.some(tag => config.projectTags.includes(tag));
+    }).slice(0, 4);
 
   return (
     <div className="relative bg-white text-black min-h-screen">
       <div className="fixed top-4 right-4 print:hidden z-10 flex gap-2">
-        <button 
+        <button
           onClick={handlePrint}
           className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
         >
           Download as PDF
         </button>
-        <a 
+        <a
           href="/"
-          className="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700 transition-colors"
+          className="px-4 py-2 bg-gray-300 text-black rounded hover:bg-gray-500 transition-colors"
         >
           Back to Site
         </a>
@@ -90,10 +86,10 @@ export default function Resume() {
 
           <h2>Education</h2>
           <p>
-            <strong>{commonData.education.institution}</strong> 
+            <strong>{commonData.education.institution}</strong>
             <span className="date-range">{commonData.education.period}</span><br />
             <em>{commonData.education.degree}</em> — <em>Aggregate GPA:</em> {commonData.education.gpa}<em><br />
-            Relevant courses:</em> {commonData.education.courses}
+              Relevant courses:</em> {commonData.education.courses}
             <ul>
               {commonData.education.achievements.map((achievement, index) => (
                 <li key={index}>{achievement}</li>
@@ -125,15 +121,15 @@ export default function Resume() {
           <h2>Notable Projects</h2>
           {filteredProjects.map((project, index) => (
             <div key={index}>
-              <p className="project-title">
-                {project.title} | 
-                <a target="_blank" href={project.url}> 
+              <span className="project-title">
+                {project.title} |
+                <a target="_blank" href={project.url}>
                   <img src="/github.svg" /> — {project.url}
                 </a>
                 {project.liveUrl && (
                   <span> (<a href={project.liveUrl}>run it here</a>)</span>
                 )}
-              </p>
+              </span>
               <ul>
                 {project.description.map((desc, i) => (
                   <li key={i}>{desc}</li>

@@ -54,15 +54,15 @@ export const projects = {
             "A simple implementation of Conway's Game of Life in C/WASM with a web interface and custom rules. Hobby project from 11th grade.",
             ["C", "WASM", "Web Development", "Algorithms", "Data Structures"], false, true),
     },
-    "timepass": {
-        "autocomplete": new Project("autocomplete", "https://github.com/s-mv/autocomplete",
-            "Simple autocomplete in C. Hobby project from first semester of college (2022).",
-            ["C"], false, true),
-        "testmv": new Project("testmv", "https://github.com/s-mv/testmv",
-            "A simple header-only testing library for C/C++. Hobby project made in school.",
-            ["C"], false, true),
+    // timepass: {
+    //     "autocomplete": new Project("autocomplete", "https://github.com/s-mv/autocomplete",
+    //         "Simple autocomplete in C. Hobby project from first semester of college (2022).",
+    //         ["C"], false, true),
+    //     "testmv": new Project("testmv", "https://github.com/s-mv/testmv",
+    //         "A simple header-only testing library for C/C++. Hobby project made in school.",
+    //         ["C"], false, true),
 
-    }
+    // }
 };
 
 export const teststack = {
