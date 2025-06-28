@@ -30,7 +30,7 @@ export default function Resume() {
     return config.includeExperiences && config.includeExperiences.includes(exp.company);
   });
 
-  const filteredProjects = config.projectSelection || 
+  const filteredProjects = config.projectSelection ||
     commonData.projects.filter(project => {
       return project.tags.some(tag => config.projectTags.includes(tag));
     }).slice(0, 4);
@@ -121,7 +121,7 @@ export default function Resume() {
           <h2>Notable Projects</h2>
           {filteredProjects.map((project, index) => (
             <div key={index}>
-              <span className="project-title">
+              <span className="project-title inline-flex items-center gap-1">
                 {project.title} |
                 <a target="_blank" href={project.url}>
                   <img src="/github.svg" /> — {project.url}
