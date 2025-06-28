@@ -1,287 +1,121 @@
+import React from 'react';
 import { useEffect, useState } from 'preact/hooks';
-import { commonData, systemsResumeConfig, sdeResumeConfig, mlResumeConfig } from '../data/resumeData';
+import { resumeProjects } from './resumeProjects.js';
 
 export default function Resume() {
   const [resumeType, setResumeType] = useState('systems');
-  const [config, setConfig] = useState(systemsResumeConfig);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const type = params.get('type') || 'systems';
     setResumeType(type);
-
-    switch (type) {
-      case 'sde':
-        setConfig(sdeResumeConfig);
-        break;
-      case 'ml':
-        setConfig(mlResumeConfig);
-        break;
-      default:
-        setConfig(systemsResumeConfig);
-    }
   }, []);
 
-  const handlePrint = () => {
-    window.print();
-  };
-
-  const filteredExperiences = commonData.experiences.filter(exp => {
-    return config.includeExperiences && config.includeExperiences.includes(exp.company);
-  });
-
-  const filteredProjects = config.projectSelection ||
-    commonData.projects.filter(project => {
-      return project.tags.some(tag => config.projectTags.includes(tag));
-    }).slice(0, 4);
-
   return (
-    <div className="relative bg-white text-black min-h-screen">
-      <div className="fixed top-4 right-4 print:hidden z-10 flex gap-2">
+    <div className="a4 w-[210mm] h-[297mm] m-auto bg-white p-[6mm] font-[Times New Roman] text-[10pt] leading-[1.2] box-border">
+      <div className="print:hidden fixed top-4 right-4 z-50">
         <button
-          onClick={handlePrint}
-          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+          onClick={() => window.print()}
+          className="flex items-center gap-2 px-8 py-4 text-[10pt] border border-black rounded bg-white shadow hover:bg-gray-100"
         >
-          Download as PDF
+          Print
         </button>
-        <a
-          href="/"
-          className="px-4 py-2 bg-gray-300 text-black rounded hover:bg-gray-500 transition-colors"
-        >
-          Back to Site
-        </a>
       </div>
-
-      <div className="a4">
-        <header>
-          <h1>{commonData.name}</h1>
-          <div className="contact-info">
-            <div className="contact-row">
-              <span className="contact-item">
-                <img className="icon" src="/github.svg" alt="GitHub" />
-                <a target="_blank" href={commonData.contact.github}>{commonData.contact.github}</a>
-              </span>
-              <span className="contact-item">
-                <img className="icon" src="/linkedin.svg" alt="LinkedIn" />
-                <a target="_blank" href={commonData.contact.linkedin}>{commonData.contact.linkedin}</a>
-              </span>
-            </div>
-            <div className="contact-row">
-              {commonData.contact.email.map((email, index) => (
-                <span key={index} className="contact-item">
-                  <img className="icon" src="/email.svg" alt="Email" />
-                  <a href={`mailto:${email}`}>{email}</a>
-                </span>
-              ))}
-            </div>
-            <span className="contact-item">
-              <img className="icon" src="/blog.svg" alt="Blog" />
-              <a target="_blank" href={commonData.contact.blog}>{commonData.contact.blog}</a>
+      <header>
+        <h1 className="text-center text-[16pt] mb-[3pt]">Shreerang Vaidya</h1>
+        <div className="contact-info text-center mb-[4pt] flex flex-col items-center">
+          <div className="contact-row flex justify-center flex-wrap mb-[1pt] w-full">
+            <span className="contact-item flex items-center mx-[4pt] whitespace-nowrap text-[8pt]">
+              <img className="icon w-[12pt] h-[12pt] mr-[3pt]" src="/github.svg" alt="GitHub" />
+              <a target="_blank" href="https://github.com/s-mv/" className="no-underline text-black border-b border-black">https://github.com/s-mv/</a>
+            </span>
+            <span className="contact-item flex items-center mx-[4pt] whitespace-nowrap text-[8pt]">
+              <img className="icon w-[12pt] h-[12pt] mr-[3pt]" src="/linkedin.svg" alt="LinkedIn" />
+              <a target="_blank" href="https://linkedin.com/in/shreerang-vaidya/" className="no-underline text-black border-b border-black">https://linkedin.com/in/shreerang-vaidya/</a>
             </span>
           </div>
-        </header>
+          <div className="contact-row flex justify-center flex-wrap mb-[1pt] w-full">
+            <span className="contact-item flex items-center mx-[4pt] whitespace-nowrap text-[8pt]">
+              <img className="icon w-[12pt] h-[12pt] mr-[3pt]" src="/email.svg" alt="Email" />
+              <a href="mailto:shreerangvaidya28@gmail.com" className="no-underline text-black border-b border-black">shreerangvaidya28@gmail.com</a>
+            </span>
+            <span className="contact-item flex items-center mx-[4pt] whitespace-nowrap text-[8pt]">
+              <img className="icon w-[12pt] h-[12pt] mr-[3pt]" src="/email.svg" alt="Email" />
+              <a href="mailto:2022.shreerang.vaidya@ves.ac.in" className="no-underline text-black border-b border-black">2022.shreerang.vaidya@ves.ac.in</a>
+            </span>
+          </div>
+          <span className="contact-item flex items-center mx-[4pt] whitespace-nowrap text-[8pt]">
+            <img className="icon w-[12pt] h-[12pt] mr-[3pt]" src="/blog.svg" alt="Blog" />
+            <a target="_blank" href="https://s-mv.github.io/blog/" className="no-underline text-black border-b border-black">https://s-mv.github.io/blog/</a>
+          </span>
+        </div>
+      </header>
 
-        <main>
-          <p className="intro">{commonData.intro}</p>
+      <main>
+        <p className="intro mb-[6pt] text-[9pt]">
+          Computer Science undergraduate interested in compiler design, machine learning, embedded systems and distributed systems.
+        </p>
 
-          <h2>Education</h2>
-          <p>
-            <strong>{commonData.education.institution}</strong>
-            <span className="date-range">{commonData.education.period}</span><br />
-            <em>{commonData.education.degree}</em> — <em>Aggregate GPA:</em> {commonData.education.gpa}<em><br />
-              Relevant courses:</em> {commonData.education.courses}
-            <ul>
-              {commonData.education.achievements.map((achievement, index) => (
-                <li key={index}>{achievement}</li>
-              ))}
-            </ul>
-          </p>
+        <h2 className="border-b border-black text-[12pt] mt-[6pt] mb-[2pt]">Education</h2>
+        <p>
+          <strong>Vivekanand Education Society's Institute of Technology</strong>
+          <span className="float-right">2022 – 2026</span><br />
+          <em>B. E. in Computer Engineering</em> — <em>Aggregate GPA:</em> 9.09<br />
+          <em>Relevant courses:</em> Systems Programming and Compiler Construction, Theoretical Computer Science, DSA, Microprocessors, Digital Logic and Computer Architecture, Operating Systems, OOPM, DBMS, Probabilistic Graphical Models, Quantitative Analysis, Discrete Structures and Graph Theory, etc.
+        </p>
+        <ul className="pl-[10pt] mt-[1pt] mb-[3pt] list-disc">
+          <li>2nd runner up in BuzzPro, 2024.</li>
+          <li>Special mention in Hack-AI-thon 2.0, 2024.</li>
+          <li>3rd runner up in Awakening The Scientist, 2022.</li>
+        </ul>
 
-          <h2>Technical Skills</h2>
-          <ul>
-            <li><strong>Languages:</strong> {commonData.skills.languages}</li>
-            <li><strong>Technologies:</strong> {commonData.skills.technologies}</li>
-            <li><strong>Tools:</strong> {commonData.skills.tools}</li>
-            <li><strong>Concepts:</strong> {commonData.skills.concepts}</li>
+        <h2 className="border-b border-black text-[12pt] mt-[6pt] mb-[2pt]">Technical Skills</h2>
+        <ul className="pl-[10pt] mt-[1pt] mb-[3pt] list-disc">
+          <li><strong>Languages:</strong> C, C++, Rust, Python, Go, Java, JavaScript</li>
+          <li><strong>Technologies:</strong> MERN Stack, PyTorch, TensorFlow, FastAPI, LLVM, WebAssembly</li>
+          <li><strong>Tools:</strong> Unix/Linux, Git, GDB, Valgrind, Make/CMake, Docker, Selenium</li>
+          <li><strong>Concepts:</strong> Systems Programming, Compiler Design, DSA, OS, Embedded Systems, ML/DL, Web Development, CI/CD</li>
+        </ul>
+
+        <h2 className="border-b border-black text-[12pt] mt-[6pt] mb-[2pt]">Experience</h2>
+        <div className="mb-[6pt]">
+          <strong>Accelus Technologies</strong> <span className="float-right">Feb 2025– Present</span><br />
+          <span className="italic">Intern</span>
+          <ul className="pl-[10pt] mt-[1pt] mb-[3pt] list-disc">
+            <li>Developing CNC machine G-code bytecode VM in C, extending rs274ngc specification for efficient control.</li>
+            <li>Extensively applying compiler design, OS, embedded and systems programming concepts.</li>
           </ul>
-
-          <h2>Experience</h2>
-          {filteredExperiences.map((exp, index) => (
-            <div key={index} className="experience-item">
-              <strong>{exp.company}</strong> <span className="date-range">{exp.period}</span><br />
-              <span className="job-title">{exp.title}</span>
-              <ul>
-                {exp.responsibilities.map((resp, i) => (
-                  <li key={i}>{resp}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-
-          <h2>Notable Projects</h2>
-          {filteredProjects.map((project, index) => (
-            <div key={index}>
-              <span className="project-title inline-flex items-center gap-1">
-                {project.title} |
-                <a target="_blank" href={project.url}>
-                  <img src="/github.svg" /> — {project.url}
-                </a>
-                {project.liveUrl && (
-                  <span> (<a href={project.liveUrl}>run it here</a>)</span>
-                )}
-              </span>
-              <ul>
-                {project.description.map((desc, i) => (
-                  <li key={i}>{desc}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-
-          <h2>Achievements</h2>
-          <ul>
-            {commonData.achievements.map((achievement, index) => (
-              <li key={index} dangerouslySetInnerHTML={{ __html: achievement }} />
-            ))}
+        </div>
+        <div className="mb-[6pt]">
+          <strong>Banao Technologies</strong> <span className="float-right">Jan 2024– Jun 2024</span><br />
+          <span className="italic">Web Scraping Intern</span>
+          <ul className="pl-[10pt] mt-[1pt] mb-[3pt] list-disc">
+            <li>Learned the applications of web scraping, DBMS, backend development, etc. through various projects.</li>
+            <li>Gained valuable insights about the internal workings of a startup and team collaboration.</li>
           </ul>
-        </main>
-      </div>
+        </div>
+        <div className="mb-[6pt]">
+          <strong>4thventure IoTspace</strong> <span className="float-right">Jun 2020– May 2021</span><br />
+          <span className="italic">Intern</span>
+          <ul className="pl-[10pt] mt-[1pt] mb-[3pt] list-disc">
+            <li>Worked on a project to develop a user-facing React application.</li>
+            <li>Collaborated on various frontend and backend systems.</li>
+          </ul>
+        </div>
 
-      <style jsx>{`
-        @page {
-          size: A4;
-          margin: 0;
-        }
+        <h2 className="border-b border-black text-[12pt] mt-[6pt] mb-[2pt]">Notable Projects</h2>
+        {resumeProjects[resumeType]}
 
-        body {
-          margin: 0;
-          padding: 0;
-        }
-
-        .a4 {
-          width: 210mm;
-          height: 297mm;
-          margin: 0 auto;
-          background: white;
-          padding: 6mm;
-          font-family: "Times New Roman", Times, serif;
-          font-size: 10pt;
-          line-height: 1.2;
-          box-sizing: border-box;
-        }
-
-        @media print {
-          .a4 {
-            margin: 0;
-            border: initial;
-            border-radius: initial;
-            width: initial;
-            min-height: initial;
-            box-shadow: initial;
-            background: initial;
-            page-break-after: always;
-          }
-        }
-
-        h1 {
-          text-align: center;
-          font-size: 16pt;
-          margin-bottom: 3pt;
-        }
-
-        .contact-info {
-          text-align: center;
-          margin-bottom: 4pt;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .contact-row {
-          display: flex;
-          justify-content: center;
-          flex-wrap: wrap;
-          margin-bottom: 1pt;
-          width: 100%;
-        }
-
-        .contact-item {
-          display: flex;
-          align-items: center;
-          margin: 0 4pt;
-          white-space: nowrap;
-          font-size: 8pt;
-        }
-
-        .icon {
-          width: 12pt;
-          height: 12pt;
-          margin-right: 3pt;
-        }
-
-        .contact-info a {
-          text-decoration: none;
-          color: #000;
-        }
-
-        h2 {
-          border-bottom: 1pt solid #000;
-          font-size: 12pt;
-          margin-top: 6pt;
-          margin-bottom: 2pt;
-        }
-
-        ul {
-          padding-left: 10pt;
-          margin-top: 1pt;
-          margin-bottom: 3pt;
-        }
-
-        li {
-          margin-left: 2px;
-          margin-bottom: 1pt;
-        }
-
-        .experience-item {
-          margin-bottom: 6pt;
-        }
-
-        .job-title {
-          font-style: italic;
-        }
-
-        .date-range {
-          float: right;
-        }
-
-        .project-title {
-          font-weight: bold;
-          margin-bottom: 1pt;
-        }
-
-        p {
-          margin: 3pt 0;
-        }
-
-        a, a:visited {
-          text-decoration: inherit;
-          color: black;
-          border-bottom: 1px solid black;
-        }
-
-        .intro {
-          margin-bottom: 6pt;
-          font-size: 9pt;
-        }
-
-        .compact-list {
-          margin-bottom: 2pt;
-        }
-
-        .compact-list li {
-          margin-bottom: 0;
-        }
-      `}</style>
+        <h2 className="border-b border-black text-[12pt] mt-[6pt] mb-[2pt]">Achievements</h2>
+        <ul className="pl-[10pt] mt-[1pt] mb-[3pt] list-disc">
+          <li><strong>AIR 1627</strong> in GATE CSE 2025 certifying strong fundamentals.</li>
+          <li>Co-hosted the 1st <a href="https://itch.io/jam/godot-india-community-game-jam/" target="_blank" className="no-underline text-black border-b border-black">Godot India Community Game Jam (GICGJ)</a>, 2025.</li>
+          <li>Co-authored and published paper "<strong>KisanSevak: Enhancing Crop Management and Market Forecasting through Machine Learning</strong>" in JET-M: <a href="https://jet-m.com/wp-content/uploads/129-JETM8261.pdf" className="no-underline text-black border-b border-black">https://jet-m.com/wp-content/uploads/129-JETM8261.pdf</a></li>
+          <li>Submitted a solution in <a href="https://medium.com/@the.smv/from-heroes-to-zeroes-my-amazon-ml-challenge-2024-experience-c31e29dd7245" target="_blank" className="no-underline text-black border-b border-black">Amazon ML Challenge, 2024</a>.</li>
+          <li>Submitted a solution in GDSC Solution Challenge, 2024.</li>
+          <li>2 time Google Code-In Participant (2017-18).</li>
+        </ul>
+      </main>
     </div>
   );
 }
