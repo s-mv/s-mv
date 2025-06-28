@@ -5,6 +5,10 @@ export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTyping, setIsTyping] = useState(true);
   const [charIndex, setCharIndex] = useState(0);
+  const [extraMessage, setExtraMessage] = useState(null);
+  const [pendingExtraMessage, setPendingExtraMessage] = useState(null);
+  const [skipNextGreeting, setSkipNextGreeting] = useState(false);
+
   const typingSpeed = 80;
   const deletingSpeed = 50;
 
@@ -20,40 +24,73 @@ export default function Hero() {
   ];
 
   useEffect(() => {
+    const fullText = extraMessage || greetings[currentIndex].text;
+
     if (isTyping) {
-      if (charIndex < greetings[currentIndex].text.length) {
+      if (charIndex < fullText.length) {
         const typingTimer = setTimeout(() => {
-          setDisplayText(greetings[currentIndex].text.substring(0, charIndex + 1));
+          setDisplayText(fullText.substring(0, charIndex + 1));
           setCharIndex(charIndex + 1);
         }, typingSpeed);
-
         return () => clearTimeout(typingTimer);
       } else {
         const pauseTimer = setTimeout(() => {
           setIsTyping(false);
-        }, greetings[currentIndex].time);
-
+        }, extraMessage ? 1200 : greetings[currentIndex].time);
         return () => clearTimeout(pauseTimer);
       }
     } else {
       if (charIndex > 0) {
         const deletingTimer = setTimeout(() => {
-          setDisplayText(greetings[currentIndex].text.substring(0, charIndex - 1));
+          setDisplayText(fullText.substring(0, charIndex - 1));
           setCharIndex(charIndex - 1);
         }, deletingSpeed);
-
         return () => clearTimeout(deletingTimer);
       } else {
         setIsTyping(true);
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % greetings.length);
+
+        if (pendingExtraMessage) {
+          setExtraMessage(pendingExtraMessage);
+          setPendingExtraMessage(null);
+          setSkipNextGreeting(true); // so we don’t replay the greeting after extra
+        } else if (!extraMessage) {
+          const nextGreetingIndex = (currentIndex + 1) % greetings.length;
+          const currentGreeting = greetings[currentIndex].text;
+
+          const shouldInject =
+            Math.random() < 0.08
+              ? "You're finally awake..."
+              : (currentGreeting === "Hello there!" && Math.random() < 0.08)
+                ? "General Kenobi!"
+                : null;
+
+          if (shouldInject) {
+            setPendingExtraMessage(shouldInject);
+          } else {
+            setCurrentIndex(nextGreetingIndex);
+          }
+        } else {
+          setExtraMessage(null);
+
+          if (skipNextGreeting) {
+            // Skip replaying the same greeting
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % greetings.length);
+            setSkipNextGreeting(false);
+          }
+        }
       }
     }
-  }, [currentIndex, charIndex, isTyping]);
+  }, [charIndex, isTyping, currentIndex, extraMessage, pendingExtraMessage, skipNextGreeting]);
 
   return (
     <section className="py-20">
-      <h1 className="text-4xl font-bold mb-2">{displayText}<span className="text-purple-500 animate-pulse">|</span></h1>
-      <h2 className="text-2xl text-green-400 mb-4">It's smv, also known as Shreerang Vaidya.</h2>
+      <h1 className="text-4xl font-bold mb-2">
+        {displayText}
+        <span className="text-purple-500 animate-pulse">|</span>
+      </h1>
+      <h2 className="text-2xl text-green-400 mb-4">
+        It's smv, also known as Shreerang Vaidya.
+      </h2>
       <p className="text-gray-300 mb-8 max-w-2xl">
         I love to tinker around with compilers and systems, but I'm interested in all things tech.
       </p>
@@ -79,5 +116,5 @@ export default function Hero() {
         </a>
       </div>
     </section>
-  )
+  );
 }
