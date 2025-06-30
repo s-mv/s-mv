@@ -50,8 +50,8 @@ export const resumeProjects = {
       <li>Implements the full mathematical model including Phi(x), and d1, d2 terms with interactive visualization.</li>
     </ul>
     <div className="font-bold mb-[1pt]">
-      KisanSevak | <a target="_blank" href="https://github.com/s-mv/fresh-fields" className="no-underline text-black border-b border-black">
-        <img src="/github.svg" className="inline w-[12pt] h-[12pt]" alt="GitHub" /> — https://github.com/s-mv/fresh-fields
+      KisanSevak | <a target="_blank" href="https://github.com/Fresh-Fields/fresh-fields" className="no-underline text-black border-b border-black">
+        <img src="/github.svg" className="inline w-[12pt] h-[12pt]" alt="GitHub" /> — https://github.com/Fresh-fields/fresh-fields
       </a>
     </div>
     <ul className="pl-[10pt] mt-[1pt] mb-[3pt] list-disc">
@@ -87,8 +87,8 @@ export const resumeProjects = {
       <li>Implements the full mathematical model including Phi(x), and d1, d2 terms with interactive visualization.</li>
     </ul>
     <div className="font-bold mb-[1pt]">
-      KisanSevak | <a target="_blank" href="https://github.com/s-mv/fresh-fields" className="no-underline text-black border-b border-black">
-        <img src="/github.svg" className="inline w-[12pt] h-[12pt]" alt="GitHub" /> — https://github.com/s-mv/fresh-fields
+      KisanSevak | <a target="_blank" href="https://github.com/Fresh-fields/fresh-fields" className="no-underline text-black border-b border-black">
+        <img src="/github.svg" className="inline w-[12pt] h-[12pt]" alt="GitHub" /> — https://github.com/Fresh-fields/fresh-fields
       </a>
     </div>
     <ul className="pl-[10pt] mt-[1pt] mb-[3pt] list-disc">

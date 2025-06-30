@@ -73,7 +73,6 @@ export default function Hero() {
           setExtraMessage(null);
 
           if (skipNextGreeting) {
-            // Skip replaying the same greeting
             setCurrentIndex((prevIndex) => (prevIndex + 1) % greetings.length);
             setSkipNextGreeting(false);
           }
