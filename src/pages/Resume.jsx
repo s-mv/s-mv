@@ -46,7 +46,7 @@ export default function Resume() {
           </div>
           <span className="contact-item flex items-center mx-[4pt] whitespace-nowrap text-[8pt]">
             <img className="icon w-[12pt] h-[12pt] mr-[3pt]" src="/blog.svg" alt="Blog" />
-            <a target="_blank" href="https://s-mv.vercel.app/" className="no-underline text-black border-b border-black">https://s-mv.github.io/blog/</a>
+            <a target="_blank" href="https://s-mv.vercel.app/" className="no-underline text-black border-b border-black">https://s-mv.vercel.app/</a>
           </span>
         </div>
       </header>
