@@ -6,11 +6,11 @@ export default function About() {
         I graduate in 2026 but my love for technology goes back to when I was a 13 year old tinkering with game engines,
         building websites, and eventually making my own compilers.
         Over time, that curiosity evolved into a deeper interest in systems programming, full-stack and machine learning.
-        <br />
+      </p>
+      <p className="text-gray-300">
         Beyond my technical interests, I'm passionate about writing and literature, with an inclination towards
         linguistics and etymology. I'm currently learning Russian out of personal interest and curiosity.
       </p>
-      
       <p className="text-gray-300">
         When I'm not coding or reading, I enjoy documenting my thoughts and experiences through writing. 
         I maintain a blog where I share insights on technology, linguistics, and personal growth.
