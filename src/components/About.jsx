@@ -2,9 +2,13 @@ export default function About() {
   return (
     <div className="space-y-6">
       <p className="text-gray-300">
-        I'm a final year student at VESIT pursuing a BE in Computer Engineering. Beyond my technical interests, 
-        I'm passionate about writing and reading books, and have a knack for linguistics and etymology.
-        Currently, I'm learning Russian as a hobby.
+        I'm a final year student at VESIT pursuing a BE in Computer Engineering.
+        I graduate in 2026 but my love for technology goes back to when I was a 13 year old tinkering with game engines,
+        building websites, and eventually making my own compilers.
+        Over time, that curiosity evolved into a deeper interest in systems programming, full-stack and machine learning.
+        <br />
+        Beyond my technical interests, I'm passionate about writing and literature, with an inclination towards
+        linguistics and etymology. I'm currently learning Russian out of personal interest and curiosity.
       </p>
       
       <p className="text-gray-300">
