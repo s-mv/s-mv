@@ -12,7 +12,7 @@ export const resumeProjects = {
     <div className="font-bold mb-[1pt]">
       gcode++ | <a target="_blank" href="https://github.com/s-mv/gcode-plus-plus" className="no-underline text-black border-b border-black">
         <img src="/github.svg" className="inline w-[12pt] h-[12pt]" alt="GitHub" /> — https://github.com/s-mv/gcode-plus-plus
-      </a> (work in progress)
+      </a>
     </div>
     <ul className="pl-[10pt] mt-[1pt] mb-[3pt] list-disc">
       <li>Bytecode VM implementation extending the NIST rs274ngc g-code interpreter, adding conditions, looping, variables for versatility.</li>
@@ -21,7 +21,7 @@ export const resumeProjects = {
     <div className="font-bold mb-[1pt]">
       smvblock | <a target="_blank" href="https://github.com/s-mv/smvblock" className="no-underline text-black border-b border-black">
         <img src="/github.svg" className="inline w-[12pt] h-[12pt]" alt="GitHub" /> — https://github.com/s-mv/smvblock
-      </a>
+      </a> (work in progress)
     </div>
     <ul className="pl-[10pt] mt-[1pt] mb-[3pt] list-disc">
       <li>Lightweight blockchain built in Rust from scratch for educational purposes based on the <a href="https://ethereum.org/en/whitepaper/" target="_blank" className="no-underline text-black border-b border-black">Ethereum white paper</a>.</li>
@@ -69,7 +69,7 @@ export const resumeProjects = {
     <div className="font-bold mb-[1pt]">
       gcode++ | <a target="_blank" href="https://github.com/s-mv/gcode-plus-plus" className="no-underline text-black border-b border-black">
         <img src="/github.svg" className="inline w-[12pt] h-[12pt]" alt="GitHub" /> — https://github.com/s-mv/gcode-plus-plus
-      </a> (work in progress)
+      </a>
     </div>
     <ul className="pl-[10pt] mt-[1pt] mb-[3pt] list-disc">
       <li>Bytecode VM implementation extending the NIST rs274ngc g-code interpreter, adding conditions, looping, variables for versatility.</li>
@@ -96,21 +96,21 @@ export const resumeProjects = {
       <li>Technical skills used: deep learning, ML, full-stack web development.</li>
     </ul>
     <div className="font-bold mb-[1pt]">
+      smvblock | <a target="_blank" href="https://github.com/s-mv/smvblock" className="no-underline text-black border-b border-black">
+        <img src="/github.svg" className="inline w-[12pt] h-[12pt]" alt="GitHub" /> — https://github.com/s-mv/smvblock
+      </a> (work in progress)
+    </div>
+    <ul className="pl-[10pt] mt-[1pt] mb-[3pt] list-disc">
+      <li>Lightweight blockchain built in Rust from scratch for educational purposes based on the <a href="https://ethereum.org/en/whitepaper/" target="_blank" className="no-underline text-black border-b border-black">Ethereum white paper</a>.</li>
+      <li>Zero-gas, zero-fee system focused on clean implementation of blockchain fundamentals.</li>
+    </ul>
+    <div className="font-bold mb-[1pt]">
       AirBNB Review Analyzer | <a target="_blank" href="https://github.com/s-mv/airbnb-review-analyzer" className="no-underline text-black border-b border-black">
         <img src="/github.svg" className="inline w-[12pt] h-[12pt]" alt="GitHub" /> — https://github.com/s-mv/airbnb-review-analyzer
       </a>
     </div>
     <ul className="pl-[10pt] mt-[1pt] mb-[3pt] list-disc">
       <li>Analyze airbnb reviews in seconds! Made using Selenium, Beautiful Soup 4 and NLTK.</li>
-    </ul>
-    <div className="font-bold mb-[1pt]">
-      smvblock | <a target="_blank" href="https://github.com/s-mv/smvblock" className="no-underline text-black border-b border-black">
-        <img src="/github.svg" className="inline w-[12pt] h-[12pt]" alt="GitHub" /> — https://github.com/s-mv/smvblock
-      </a>
-    </div>
-    <ul className="pl-[10pt] mt-[1pt] mb-[3pt] list-disc">
-      <li>Lightweight blockchain built in Rust from scratch for educational purposes based on the <a href="https://ethereum.org/en/whitepaper/" target="_blank" className="no-underline text-black border-b border-black">Ethereum white paper</a>.</li>
-      <li>Zero-gas, zero-fee system focused on clean implementation of blockchain fundamentals.</li>
     </ul>
   </>,
 };
