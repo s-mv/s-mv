@@ -105,12 +105,13 @@ export const resumeProjects = {
       <li>Zero-gas, zero-fee system focused on clean implementation of blockchain fundamentals.</li>
     </ul>
     <div className="font-bold mb-[1pt]">
-      AirBNB Review Analyzer | <a target="_blank" href="https://github.com/s-mv/airbnb-review-analyzer" className="no-underline text-black border-b border-black">
-        <img src="/github.svg" className="inline w-[12pt] h-[12pt]" alt="GitHub" /> — https://github.com/s-mv/airbnb-review-analyzer
+      gcode++ | <a target="_blank" href="https://github.com/s-mv/gcode-plus-plus" className="no-underline text-black border-b border-black">
+        <img src="/github.svg" className="inline w-[12pt] h-[12pt]" alt="GitHub" /> — https://github.com/s-mv/gcode-plus-plus
       </a>
     </div>
     <ul className="pl-[10pt] mt-[1pt] mb-[3pt] list-disc">
-      <li>Analyze airbnb reviews in seconds! Made using Selenium, Beautiful Soup 4 and NLTK.</li>
+      <li>Bytecode VM implementation extending the NIST rs274ngc g-code interpreter, adding conditions, looping, variables for versatility.</li>
+      <li>Extensively applying compiler design, systems programming, as well as data structures and algorithms.</li>
     </ul>
   </>,
 };
