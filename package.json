@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/roboto-mono": "^5.2.6",
     "preact": "^10.26.9"
   },
   "devDependencies": {

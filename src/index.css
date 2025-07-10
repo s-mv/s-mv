@@ -9,10 +9,9 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem; /* Adjust this value based on your header height */
+  scroll-padding-top: 5rem; 
 }
 
-/* Add print styles for resume */
 @media print {
   body {
     background: white;
