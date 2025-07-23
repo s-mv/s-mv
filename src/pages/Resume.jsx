@@ -4,11 +4,16 @@ import { resumeProjects } from './resumeProjects.jsx';
 
 export default function Resume() {
   const [resumeType, setResumeType] = useState('systems');
+  const [showPhoto, setShowPhoto] = useState(false);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
+    console.log(params);
     const type = params.get('type') || 'systems';
+    const photo = params.has('photo');
     setResumeType(type);
+    setShowPhoto(photo);
+    console.log('Photo param exists:', photo);
   }, []);
 
   return (
@@ -21,34 +26,44 @@ export default function Resume() {
           Print
         </button>
       </div>
-      <header>
-        <h1 className="text-center text-[16pt] mb-[3pt]">Shreerang Vaidya</h1>
-        <div className="contact-info text-center mb-[4pt] flex flex-col items-center">
-          <div className="contact-row flex justify-center flex-wrap mb-[1pt] w-full">
+      <header className="flex items-start gap-[8mm] mb-[4pt]">
+        <div className="flex-1">
+          <h1 className="text-center text-[16pt] mb-[3pt]">Shreerang Vaidya</h1>
+          <div className="contact-info text-center mb-[4pt] flex flex-col items-center">
+            <div className="contact-row flex justify-center flex-wrap mb-[1pt] w-full">
+              <span className="contact-item flex items-center mx-[4pt] whitespace-nowrap text-[8pt]">
+                <img className="icon w-[12pt] h-[12pt] mr-[3pt]" src="/github.svg" alt="GitHub" />
+                <a target="_blank" href="https://github.com/s-mv/" className="no-underline text-black border-b border-black">https://github.com/s-mv/</a>
+              </span>
+              <span className="contact-item flex items-center mx-[4pt] whitespace-nowrap text-[8pt]">
+                <img className="icon w-[12pt] h-[12pt] mr-[3pt]" src="/linkedin.svg" alt="LinkedIn" />
+                <a target="_blank" href="https://linkedin.com/in/shreerang-vaidya/" className="no-underline text-black border-b border-black">https://linkedin.com/in/shreerang-vaidya/</a>
+              </span>
+            </div>
+            <div className="contact-row flex justify-center flex-wrap mb-[1pt] w-full">
+              <span className="contact-item flex items-center mx-[4pt] whitespace-nowrap text-[8pt]">
+                <img className="icon w-[12pt] h-[12pt] mr-[3pt]" src="/email.svg" alt="Email" />
+                <a href="mailto:shreerangvaidya28@gmail.com" className="no-underline text-black border-b border-black">shreerangvaidya28@gmail.com</a>
+              </span>
+              <span className="contact-item flex items-center mx-[4pt] whitespace-nowrap text-[8pt]">
+                <img className="icon w-[12pt] h-[12pt] mr-[3pt]" src="/email.svg" alt="Email" />
+                <a href="mailto:2022.shreerang.vaidya@ves.ac.in" className="no-underline text-black border-b border-black">2022.shreerang.vaidya@ves.ac.in</a>
+              </span>
+            </div>
             <span className="contact-item flex items-center mx-[4pt] whitespace-nowrap text-[8pt]">
-              <img className="icon w-[12pt] h-[12pt] mr-[3pt]" src="/github.svg" alt="GitHub" />
-              <a target="_blank" href="https://github.com/s-mv/" className="no-underline text-black border-b border-black">https://github.com/s-mv/</a>
-            </span>
-            <span className="contact-item flex items-center mx-[4pt] whitespace-nowrap text-[8pt]">
-              <img className="icon w-[12pt] h-[12pt] mr-[3pt]" src="/linkedin.svg" alt="LinkedIn" />
-              <a target="_blank" href="https://linkedin.com/in/shreerang-vaidya/" className="no-underline text-black border-b border-black">https://linkedin.com/in/shreerang-vaidya/</a>
+              <img className="icon w-[12pt] h-[12pt] mr-[3pt]" src="/blog.svg" alt="Blog" />
+              <a target="_blank" href="https://s-mv.vercel.app/" className="no-underline text-black border-b border-black">https://s-mv.vercel.app/</a>
             </span>
           </div>
-          <div className="contact-row flex justify-center flex-wrap mb-[1pt] w-full">
-            <span className="contact-item flex items-center mx-[4pt] whitespace-nowrap text-[8pt]">
-              <img className="icon w-[12pt] h-[12pt] mr-[3pt]" src="/email.svg" alt="Email" />
-              <a href="mailto:shreerangvaidya28@gmail.com" className="no-underline text-black border-b border-black">shreerangvaidya28@gmail.com</a>
-            </span>
-            <span className="contact-item flex items-center mx-[4pt] whitespace-nowrap text-[8pt]">
-              <img className="icon w-[12pt] h-[12pt] mr-[3pt]" src="/email.svg" alt="Email" />
-              <a href="mailto:2022.shreerang.vaidya@ves.ac.in" className="no-underline text-black border-b border-black">2022.shreerang.vaidya@ves.ac.in</a>
-            </span>
-          </div>
-          <span className="contact-item flex items-center mx-[4pt] whitespace-nowrap text-[8pt]">
-            <img className="icon w-[12pt] h-[12pt] mr-[3pt]" src="/blog.svg" alt="Blog" />
-            <a target="_blank" href="https://s-mv.vercel.app/" className="no-underline text-black border-b border-black">https://s-mv.vercel.app/</a>
-          </span>
         </div>
+        {showPhoto && 
+        <div className="flex-shrink-0">
+          <img 
+            src="/photo.jpg" 
+            alt="Shreerang Vaidya" 
+            className="w-[25mm] h-[32mm] object-cover border border-gray-300"
+          />
+        </div>}
       </header>
 
       <main>
