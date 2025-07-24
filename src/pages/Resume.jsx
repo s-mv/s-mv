@@ -94,7 +94,7 @@ export default function Resume() {
 
         <h2 className="border-b border-black text-[12pt] mt-[6pt] mb-[2pt]">Experience</h2>
         <div className="mb-[6pt]">
-          <strong>Accelus Technologies</strong> <span className="float-right">Feb 2025– Present</span><br />
+          <strong>Accelus Robotics</strong> <span className="float-right">Feb 2025– Present</span><br />
           <span className="italic">Intern</span>
           <ul className="pl-[10pt] mt-[1pt] mb-[3pt] list-disc">
             <li>Developing CNC machine G-code bytecode VM in C, extending rs274ngc specification for efficient control.</li>

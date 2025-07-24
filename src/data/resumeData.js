@@ -101,7 +101,7 @@ export const commonData = {
 export const systemsResumeConfig = {
   title: "Systems Engineering Resume",
   projectTags: ["systems", "compilers"],
-  includeExperiences: ["Accelus Technologies", "Banao Technologies", "4thventure IoTSpace"],
+  includeExperiences: ["Accelus Robotics", "Banao Technologies", "4thventure IoTSpace"],
   projectSelection: commonData.projects
     .filter(p => p.tags.includes("systems") || p.tags.includes("compilers"))
     .filter(p => !p.hobby && !p.wip)
@@ -113,7 +113,7 @@ export const systemsResumeConfig = {
 export const sdeResumeConfig = {
   title: "Software Development Engineer Resume",
   projectTags: ["sde"],
-  includeExperiences: ["Accelus Technologies", "Banao Technologies", "4thventure IoTSpace"],
+  includeExperiences: ["Accelus Robotics", "Banao Technologies", "4thventure IoTSpace"],
   projectSelection: commonData.projects
     .filter(p => p.tags.includes("sde"))
     .filter(p => !p.hobby)
@@ -125,7 +125,7 @@ export const sdeResumeConfig = {
 export const mlResumeConfig = {
   title: "Machine Learning Engineer Resume",
   projectTags: ["ml"],
-  includeExperiences: ["Banao Technologies", "Accelus Technologies", "4thventure IoTSpace"],
+  includeExperiences: ["Banao Technologies", "Accelus Robotics", "4thventure IoTSpace"],
   projectSelection: commonData.projects
     .filter(p => p.tags.includes("ml"))
     .slice(0, 4),

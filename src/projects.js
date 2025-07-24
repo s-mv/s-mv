@@ -38,7 +38,7 @@ export const projects = {
             "Pricing engine for European call/put options using an application of the Black-Scholes (or Black-Scholes-Merton) equation.",
             ["Rust", "WASM", "Quantitative Analysis", "Web Development", "Data Science", "Finance", "React", "Vite", "Tailwind", "ChartJS"],
         ),
-        KisanSevak: new Project("KisanSevak", "https://s-mv.github.io/black-scholes-visualizer/",
+        KisanSevak: new Project("KisanSevak", "https://github.com/Fresh-Fields/fresh-fields",
             "ML powered agricultural tool for the farmer of the future! Recommends crops, predicts farm yield and compares future market prices. "
             + "Co-authored with my SE Project group alongside a research paper.",
             ["Python", "Machine Learning", "Flask", "Web Development", "Data Collection", "Data Science", "SciKit-Lean", "React", "Vite", "SQL", "Research Methodology", "Data Analysis"]),
@@ -99,7 +99,7 @@ class Experience {
 
 export const experiences = [
     new Experience(
-        "Accelus Technologies",
+        "Accelus Robotics",
         "Intern",
         ["Developing CNC machine G-code bytecode VM in C, extending rs274ngc specification for efficient control.",
             "Extensively applying compiler design, OS, embedded and systems programming concepts."
