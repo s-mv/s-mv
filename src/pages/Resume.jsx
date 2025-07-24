@@ -17,13 +17,19 @@ export default function Resume() {
   }, []);
 
   return (
-    <div className="a4 w-[210mm] h-[297mm] m-auto bg-white p-[6mm] font-[Times New Roman] text-[10pt] leading-[1.2] box-border">
-      <div className="print:hidden fixed top-4 right-4 z-50">
+    <div className="a4 w-[210mm] h-[297mm] m-auto bg-white p-[6mm] font-[Times New Roman] text-[10pt] leading-[1.2] box-border relative">
+      <div className="print:hidden fixed top-4 right-4 z-50 flex flex-col gap-2 items-end">
         <button
           onClick={() => window.print()}
           className="flex items-center gap-2 px-8 py-4 text-[10pt] border border-black rounded bg-white shadow hover:bg-gray-100"
         >
           Print
+        </button>
+        <button
+          onClick={() => setShowPhoto(!showPhoto)}
+          className="flex items-center gap-2 px-6 py-2 text-[10pt] border border-black rounded bg-white shadow hover:bg-gray-100"
+        >
+          {showPhoto ? 'Hide Photo' : 'Show Photo'}
         </button>
       </div>
       <header className="flex items-start gap-[8mm] mb-[4pt]">
@@ -56,15 +62,15 @@ export default function Resume() {
             </span>
           </div>
         </div>
-        {showPhoto && 
-        <div className="flex-shrink-0">
-          <img 
-            src="/photo.jpg" 
-            alt="Shreerang Vaidya" 
+      </header>
+      {showPhoto &&
+        <div className="absolute top-4 right-4">
+          <img
+            src="/photo.jpg"
+            alt="Shreerang Vaidya"
             className="w-[25mm] h-[32mm] object-cover border border-gray-300"
           />
         </div>}
-      </header>
 
       <main>
         <p className="intro mb-[6pt] text-[9pt]">
