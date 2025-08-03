@@ -83,7 +83,7 @@ export const commonData = {
     institution: "Vivekanand Education Society's Institute of Technology",
     degree: "B. E. in Computer Engineering",
     period: "2022 – 2026",
-    gpa: "9.09",
+    gpa: "9.13",
     courses: "Systems Programming and Compiler Construction, Theoretical Computer Science, DSA, Microprocessors, Digital Logic and Computer Architecture, Operating Systems, OOPM, DBMS, Probabilistic Graphical Models, Quantitative Analysis, Discrete Structures and Graph Theory, etc.",
     achievements: [
       "2nd runner up in BuzzPro, 2024.",
