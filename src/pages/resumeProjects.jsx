@@ -1,6 +1,16 @@
 export const resumeProjects = {
   systems: <>
     <div className="font-bold mb-[1pt]">
+      smvrt | <a target="_blank" href="https://github.com/s-mv/smvrt" className="no-underline text-black border-b border-black">
+        <img src="/github.svg" className="inline w-[12pt] h-[12pt]" alt="GitHub" /> — https://github.com/s-mv/smvrt
+      </a> (work in progress)
+    </div>
+    <ul className="pl-[10pt] mt-[1pt] mb-[3pt] list-disc">
+      <li>Minimal preemptive real-time operating system written in C and assembly, targeting ARMv7-based hardware like Raspberry Pi and QEMU.</li>
+      <li>Includes cooperative multitasking, custom scheduler, basic UART CLI, and memory-mapped I/O with no external dependencies.</li>
+      <li>Bootable image runs bare-metal without Linux, showcasing low-level systems design.</li>
+    </ul>
+    <div className="font-bold mb-[1pt]">
       gcode++ | <a target="_blank" href="https://github.com/s-mv/gcode-plus-plus" className="no-underline text-black border-b border-black">
         <img src="/github.svg" className="inline w-[12pt] h-[12pt]" alt="GitHub" /> — https://github.com/s-mv/gcode-plus-plus
       </a>
@@ -17,16 +27,6 @@ export const resumeProjects = {
     <ul className="pl-[10pt] mt-[1pt] mb-[3pt] list-disc">
       <li>Register-based Virtual Machine in C with assembler. Release v0.1.1 available, CI/CD with GitHub Actions.</li>
       <li>Utilizes DSA, microprocessors, compiler design principles. Helped me learn Github Actions CI/CD.</li>
-    </ul>
-    <div className="font-bold mb-[1pt]">
-      smvrt | <a target="_blank" href="https://github.com/s-mv/smvrt" className="no-underline text-black border-b border-black">
-        <img src="/github.svg" className="inline w-[12pt] h-[12pt]" alt="GitHub" /> — https://github.com/s-mv/smvrt
-      </a> (work in progress)
-    </div>
-    <ul className="pl-[10pt] mt-[1pt] mb-[3pt] list-disc">
-      <li>Minimal preemptive real-time operating system written in C and assembly, targeting ARMv7-based hardware like Raspberry Pi and QEMU.</li>
-      <li>Includes cooperative multitasking, custom scheduler, basic UART CLI, and memory-mapped I/O with no external dependencies.</li>
-      <li>Bootable image runs bare-metal without Linux, showcasing low-level systems design.</li>
     </ul>
     <div className="font-bold mb-[1pt]">
       Black-Scholes Visualizer | <a target="_blank" href="https://github.com/s-mv/black-scholes-visualizer" className="no-underline text-black border-b border-black">
@@ -116,3 +116,4 @@ export const resumeProjects = {
     </ul>
   </>,
 };
+

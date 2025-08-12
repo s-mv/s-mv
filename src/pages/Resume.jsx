@@ -81,7 +81,7 @@ export default function Resume() {
         <p>
           <strong>Vivekanand Education Society's Institute of Technology</strong>
           <span className="float-right">2022 – 2026</span><br />
-          <em>B. E. in Computer Engineering</em> — <em>Aggregate GPA:</em> 9.09<br />
+          <em>B. E. in Computer Engineering</em> — <em>Aggregate GPA:</em> 9.13<br />
           <em>Relevant courses:</em> Systems Programming and Compiler Construction, Theoretical Computer Science, DSA, Microprocessors, Digital Logic and Computer Architecture, Operating Systems, OOPM, DBMS, Probabilistic Graphical Models, Quantitative Analysis, Discrete Structures and Graph Theory, etc.
         </p>
         <ul className="pl-[10pt] mt-[1pt] mb-[3pt] list-disc">
