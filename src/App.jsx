@@ -9,8 +9,8 @@ import About from './components/About'
 import Footer from './components/Footer'
 import ResumeSection from './components/ResumeSection'
 
-const CollapsibleSection = ({ id, title, children }) => {
-  const [isOpen, setIsOpen] = useState(true);
+const CollapsibleSection = ({ id, title, open = true, children }) => {
+  const [isOpen, setIsOpen] = useState(open);
 
   return (
     <section id={id} className="my-16 pt-16 -mt-16">
@@ -76,10 +76,8 @@ export default function App() {
           <Hero />
         </div>
 
-        <section id="about" className="my-16 pt-16 -mt-16">
-          <h2 className="text-2xl font-bold mb-8">About Me</h2>
-          <About />
-        </section>
+        <h2 className="text-2xl font-bold">About Me</h2>
+        <About />
 
         <CollapsibleSection id="resumes" title="Resume">
           <ResumeSection />
@@ -108,3 +106,4 @@ export default function App() {
     </div>
   )
 }
+

@@ -9,8 +9,9 @@ const route = window.location.pathname;
 let component;
 if (route === '/resume') {
   component = <Resume />;
-} else {
+} else if (route === "/me") component = <a />; else {
   component = <App />;
 }
 
 render(component, document.getElementById('app'));
+

@@ -93,18 +93,19 @@ export default function Resume() {
         <h2 className="border-b border-black text-[12pt] mt-[6pt] mb-[2pt]">Technical Skills</h2>
         <ul className="pl-[10pt] mt-[1pt] mb-[3pt] list-disc">
           <li><strong>Languages:</strong> C, C++, Rust, Python, Go, Java, JavaScript</li>
-          <li><strong>Technologies:</strong> MERN Stack, PyTorch, TensorFlow, FastAPI, LLVM, WebAssembly</li>
+          <li><strong>Technologies:</strong> LLVM, PyTorch, TensorFlow, MERN Stack, FastAPI, WebAssembly</li>
           <li><strong>Tools:</strong> Unix/Linux, Git, GDB, Valgrind, Make/CMake, Docker, Selenium</li>
-          <li><strong>Concepts:</strong> Systems Programming, Compiler Design, DSA, OS, Embedded Systems, ML/DL, Web Development, CI/CD</li>
+          <li><strong>Concepts:</strong> Systems Programming, Compiler Design, OS, Embedded Systems, DSA, ML/DL, Web Development, CI/CD</li>
         </ul>
 
         <h2 className="border-b border-black text-[12pt] mt-[6pt] mb-[2pt]">Experience</h2>
         <div className="mb-[6pt]">
-          <strong>Accelus Robotics</strong> <span className="float-right">Feb 2025– Present</span><br />
+          <strong>Accelus Robotics</strong> <span className="float-right">May 2025– July 2025</span><br />
           <span className="italic">Intern</span>
           <ul className="pl-[10pt] mt-[1pt] mb-[3pt] list-disc">
-            <li>Developing CNC machine G-code bytecode VM in C, extending rs274ngc specification for efficient control.</li>
-            <li>Extensively applying compiler design, OS, embedded and systems programming concepts.</li>
+            <li>Developed a bytecode VM in C++ extending the rs274ngc NIST specification for efficient CNC machine control.</li>
+            <li>Forked the LinuxCNC repository in order to introduce the extension in its ecosystem.</li>
+            <li>Extensively applied compiler design, OS, embedded and systems programming concepts.</li>
           </ul>
         </div>
         <div className="mb-[6pt]">
@@ -131,12 +132,15 @@ export default function Resume() {
         <ul className="pl-[10pt] mt-[1pt] mb-[3pt] list-disc">
           <li><strong>AIR 1627</strong> in GATE CSE 2025 certifying strong fundamentals.</li>
           <li>Co-hosted the 1st <a href="https://itch.io/jam/godot-india-community-game-jam/" target="_blank" className="no-underline text-black border-b border-black">Godot India Community Game Jam (GICGJ)</a>, 2025.</li>
-          <li>Co-authored and published paper "<strong>KisanSevak: Enhancing Crop Management and Market Forecasting through Machine Learning</strong>" in JET-M: <a href="https://jet-m.com/wp-content/uploads/129-JETM8261.pdf" className="no-underline text-black border-b border-black">https://jet-m.com/wp-content/uploads/129-JETM8261.pdf</a></li>
-          <li>Submitted a solution in <a href="https://medium.com/@the.smv/from-heroes-to-zeroes-my-amazon-ml-challenge-2024-experience-c31e29dd7245" target="_blank" className="no-underline text-black border-b border-black">Amazon ML Challenge, 2024</a>.</li>
-          <li>Submitted a solution in GDSC Solution Challenge, 2024.</li>
+          <li>Co-authored the paper "<strong>KisanSevak: Enhancing Crop Management and Market Forecasting through Machine Learning</strong>":<br /><a href="https://jet-m.com/wp-content/uploads/129-JETM8261.pdf" className="no-underline text-black border-b border-black">https://jet-m.com/wp-content/uploads/129-JETM8261.pdf</a></li>
+          <li>Submitted an entry for <a href="https://segfault.compilertech.org/" target="_blank" className="no-underline text-black border-b border-black">IICT Segfault Hackathon
+          </a> – <a href="https://github.com/joeldotdias/divinic/" target="_blank" className="no-underline text-black border-b border-black">
+              DiviniC: A modern Holy C Compiler with JIT Runtime and Lazy Error Handling</a>.
+          </li>
           <li>2 time Google Code-In Participant (2017-18).</li>
         </ul>
       </main>
     </div>
   );
 }
+

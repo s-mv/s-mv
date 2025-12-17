@@ -103,8 +103,8 @@ export const experiences = [
   new Experience(
     "Accelus Robotics",
     "Intern",
-    ["Developing CNC machine G-code bytecode VM in C, extending rs274ngc specification for efficient control.",
-      "Extensively applying compiler design, OS, embedded and systems programming concepts."
+    ["Developed a CNC machine bytecode VM in C as well as a component for LinuxCNC, extending the NIST rs274ngc specification for efficient control.",
+      "Extensively applied compiler design, OS, embedded and systems programming concepts."
     ],
     ["C", "Compiler Design", "Virtual Machines", "Systems Programming", "Embedded Systems", "CNC"],
     "Feb 2025 to Present"
@@ -173,3 +173,4 @@ export const achievements = [
     "2017-2018"
   )
 ];
+
