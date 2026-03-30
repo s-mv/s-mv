@@ -1,14 +1,3 @@
 # Hello there!
 
-Myself smv.
-
-Here are some stats for the ones who hunger for numbers.
-
-![s-mv's stats](https://github-readme-stats.vercel.app/api?username=s-mv&show_icons=true&theme=gruvbox)
-
-Portfolio resides at [https://s-mv.vercel.app](https://s-mv.vercel.app). 
-
-Anyway, hello there.
-
-This is smv, known to some as Shreerang Vaidya. I am a final year student right
-now who loves all things tech.
+It's smv! Who doesn't know what else to add in here.
